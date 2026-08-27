@@ -66,6 +66,11 @@ if (!class_exists(__NAMESPACE__ . '\\Egns_Elementor')) {
 				'demo',
 				'header',
 				'footer',
+				'hero-banner',
+				'trust-strip',
+				'compare-pricing',
+				'why-choose',
+				'how-it-works',
 			));
 
 			if (!is_array($elementor_widgets)) {

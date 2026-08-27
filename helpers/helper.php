@@ -54,7 +54,7 @@ if (!class_exists('Egns_Helper')) {
 						'menu_id'         => '',
 						'depth'           => $depth,
 						// Conditionally add the walker
-						'walker'          => class_exists('CSF') ? new \Egns_Menu_Walker() : null,
+						'walker' => class_exists('CSF') ? new \Egns_Menu_Walker() : null,
 					)
 				);
 			} else {
@@ -611,7 +611,7 @@ if (!class_exists('Egns_Helper')) {
 							<div class="search-and-language-area">
 								<div class="search-area">
 									<div class="search-btn">
-										<span><?php echo esc_html__('Explore', 'linkpva-core' ) ?></span>
+										<span><?php echo esc_html__('Explore', 'linkpva-core') ?></span>
 										<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 											<g>
 												<path
@@ -628,7 +628,7 @@ if (!class_exists('Egns_Helper')) {
 															d="M15.2239 14.1678L13.1189 12.0702C14.26 10.6603 14.8168 8.86632 14.6742 7.0581C14.5316 5.24988 13.7006 3.56532 12.3525 2.35176C11.0045 1.13821 9.24212 0.488199 7.42892 0.535771C5.61571 0.583343 3.88988 1.32487 2.60731 2.60744C1.32474 3.89001 0.583214 5.61584 0.535642 7.42905C0.48807 9.24225 1.13808 11.0046 2.35163 12.3526C3.56519 13.7007 5.24975 14.5317 7.05797 14.6743C8.86619 14.8169 10.6602 14.2602 12.07 13.119L14.1677 15.2241C14.2368 15.2938 14.3191 15.3491 14.4097 15.3869C14.5004 15.4247 14.5976 15.4441 14.6958 15.4441C14.794 15.4441 14.8912 15.4247 14.9819 15.3869C15.0725 15.3491 15.1548 15.2938 15.2239 15.2241C15.2937 15.1549 15.349 15.0727 15.3868 14.982C15.4245 14.8914 15.444 14.7941 15.444 14.6959C15.444 14.5977 15.4245 14.5005 15.3868 14.4099C15.349 14.3192 15.2937 14.237 15.2239 14.1678ZM2.05039 7.62938C2.05039 6.52599 2.37758 5.44737 2.9906 4.52993C3.60361 3.61249 4.47491 2.89743 5.49431 2.47518C6.51372 2.05293 7.63544 1.94245 8.71763 2.15771C9.79983 2.37297 10.7939 2.90431 11.5741 3.68453C12.3543 4.46475 12.8857 5.4588 13.1009 6.541C13.3162 7.62319 13.2057 8.74492 12.7834 9.76432C12.3612 10.7837 11.6461 11.655 10.7287 12.268C9.81126 12.8811 8.73265 13.2082 7.62925 13.2082C6.14964 13.2082 4.73064 12.6205 3.6844 11.5742C2.63816 10.528 2.05039 9.10899 2.05039 7.62938Z" />
 													</g>
 												</svg>
-												<input type="text" id="s" name="s" placeholder="<?php echo esc_attr__('Search service, industry & more', 'linkpva-core' ) ?>">
+												<input type="text" id="s" name="s" placeholder="<?php echo esc_attr__('Search service, industry & more', 'linkpva-core') ?>">
 											</div>
 											<div class="search-close-btn">
 												<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
@@ -707,7 +707,7 @@ if (!class_exists('Egns_Helper')) {
 			<footer class="footer-section pt-16">
 				<div class="copyright-area">
 					<div class="container-fluid one">
-						<span>©<?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html__('Linkpva ', 'linkpva-core' ); ?> <a href="<?php echo esc_url('https://www.egenslab.com/') ?>"><?php echo esc_html__('Egenslab', 'linkpva-core' ) ?></a>. <?php echo esc_html__('All Rights Reserved.', 'linkpva-core' ); ?></span>
+						<span>©<?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html__('Linkpva ', 'linkpva-core'); ?> <a href="<?php echo esc_url('https://www.egenslab.com/') ?>"><?php echo esc_html__('Egenslab', 'linkpva-core') ?></a>. <?php echo esc_html__('All Rights Reserved.', 'linkpva-core'); ?></span>
 					</div>
 				</div>
 			</footer>

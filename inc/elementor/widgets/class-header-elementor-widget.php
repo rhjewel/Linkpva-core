@@ -286,16 +286,6 @@ class linkpva_Header_Widget extends Widget_Base
 			)
 		);
 
-		$this->add_control(
-			'linkpva_header_dropdown_icon',
-			array(
-				'label'       => esc_html__('Mobile Dropdown Icon', 'linkpva-core'),
-				'type'        => Controls_Manager::ICONS,
-				'default'     => array('value' => 'bi bi-plus', 'library' => 'bootstrap'),
-				'description' => esc_html__('The primary menu is rendered from Appearance > Menus.', 'linkpva-core'),
-			)
-		);
-
 		$this->end_controls_section();
 	}
 
@@ -667,10 +657,7 @@ class linkpva_Header_Widget extends Widget_Base
 			array(
 				'label'     => esc_html__('Dropdown Icon Color', 'linkpva-core'),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .linkpva-primary-nav .dropdown-icon'          => 'color: {{VALUE}};',
-					'{{WRAPPER}} .linkpva-primary-nav .dropdown-icon svg path' => 'fill: {{VALUE}};',
-				),
+				'selectors' => array('{{WRAPPER}} .linkpva-primary-nav .menu-item-has-children > a::before' => 'color: {{VALUE}};'),
 			)
 		);
 
@@ -681,10 +668,7 @@ class linkpva_Header_Widget extends Widget_Base
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array('px', 'rem'),
 				'range'      => array('px' => array('min' => 6, 'max' => 30)),
-				'selectors'  => array(
-					'{{WRAPPER}} .linkpva-primary-nav .dropdown-icon'     => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .linkpva-primary-nav .dropdown-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-				),
+				'selectors'  => array('{{WRAPPER}} .linkpva-primary-nav .menu-item-has-children > a::before' => 'font-size: {{SIZE}}{{UNIT}};'),
 			)
 		);
 
@@ -1123,18 +1107,6 @@ class linkpva_Header_Widget extends Widget_Base
 		Icons_Manager::render_icon($icon, $attributes);
 	}
 
-	private function get_icon_html($icon, $attributes = array())
-	{
-		if (empty($icon['value'])) {
-			return '';
-		}
-
-		ob_start();
-		Icons_Manager::render_icon($icon, $attributes);
-
-		return ob_get_clean();
-	}
-
 	protected function render()
 	{
 		$settings         = $this->get_settings_for_display();
@@ -1144,7 +1116,6 @@ class linkpva_Header_Widget extends Widget_Base
 		$search_input_id  = 'linkpva-site-search-' . $widget_id;
 		$desktop_logo     = $this->get_media_data($settings['linkpva_header_logo_image']);
 		$mobile_logo      = $this->get_media_data($settings['linkpva_header_mobile_logo_image'], $settings['linkpva_header_logo_image']);
-		$dropdown_icon    = $this->get_icon_html($settings['linkpva_header_dropdown_icon'], array('class' => 'd-lg-none d-flex dropdown-icon', 'aria-hidden' => 'true'));
 		$show_topbar       = 'yes' === $settings['linkpva_header_show_topbar'];
 		$show_topbar_links = $show_topbar && 'yes' === $settings['linkpva_header_show_topbar_links'];
 		$show_search       = 'yes' === $settings['linkpva_header_show_search'];
@@ -1236,7 +1207,7 @@ class linkpva_Header_Widget extends Widget_Base
 							'',
 							'',
 							'',
-							$dropdown_icon,
+							'',
 							'menu-list',
 							3
 						);

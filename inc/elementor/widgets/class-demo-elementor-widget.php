@@ -13,7 +13,7 @@ class linkpva_Demo_Widget extends Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Demo', 'linkpva-core');
+        return esc_html__('LinkPVA Demo', 'linkpva-core');
     }
 
     public function get_icon()
