@@ -71,6 +71,12 @@ if (!class_exists(__NAMESPACE__ . '\\Egns_Elementor')) {
 				'compare-pricing',
 				'why-choose',
 				'how-it-works',
+				'service-facts',
+				'buyer-guide',
+				'faqs',
+				'blog',
+				'bulk-quote',
+				'call-to-action',
 			));
 
 			if (!is_array($elementor_widgets)) {
