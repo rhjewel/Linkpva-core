@@ -2,6 +2,36 @@
 	content: url('../../theme-options/images/small-icon.svg');
 }
 
+/* Products Elementor widget: Elementor icons may render as SVG instead of the theme's <i> icons. */
+.linkpva-products-widget .linkpva-text-link svg,
+.linkpva-products-widget .linkpva-product-body ul li svg,
+.linkpva-products-widget .linkpva-product-footer a svg,
+.linkpva-products-widget .linkpva-demo-note svg {
+	display: block;
+	width: 1em;
+	height: 1em;
+	flex: 0 0 auto;
+}
+
+.linkpva-products-widget .linkpva-text-link svg path,
+.linkpva-products-widget .linkpva-product-body ul li svg path,
+.linkpva-products-widget .linkpva-product-footer a svg path,
+.linkpva-products-widget .linkpva-demo-note svg path {
+	fill: currentColor;
+}
+
+.linkpva-products-widget .linkpva-text-link svg {
+	transition: transform 0.3s ease;
+}
+
+.linkpva-products-widget .linkpva-text-link:hover svg {
+	transform: translateX(4px);
+}
+
+.linkpva-products-widget .linkpva-product-body ul li svg {
+	color: var(--color-success);
+}
+
 .linkpva-heading-widget {
 	box-sizing: border-box;
 	width: 100%;
@@ -114,4 +144,710 @@
 
 .linkpva-people-details-widget .people-details-content .social-area .social-list a:hover i {
 	color: var(--primary-color2);
+}
+
+.linkpva-contact-widget .linkpva-contact-info-icon,
+.linkpva-contact-widget .linkpva-contact-info-content,
+.linkpva-contact-widget .linkpva-contact-info-title,
+.linkpva-contact-widget .linkpva-contact-info-value {
+	display: block;
+}
+
+.linkpva-contact-widget .linkpva-contact-info-icon {
+	flex: 0 0 auto;
+	line-height: 1;
+}
+
+.linkpva-contact-widget .linkpva-contact-info-value,
+.linkpva-contact-widget .linkpva-contact-info-value a {
+	color: inherit;
+}
+
+.linkpva-contact-widget .linkpva-contact-form-title {
+	font-size: 24px;
+}
+
+.linkpva-contact-widget .linkpva-contact-form-description {
+	color: var(--color-text-muted);
+	font-size: 13px;
+}
+
+.linkpva-contact-widget .linkpva-contact-form form > p {
+	margin-bottom: 20px;
+}
+
+.linkpva-contact-widget .linkpva-contact-form form > p:last-child {
+	margin-bottom: 0;
+}
+
+.linkpva-contact-widget .linkpva-contact-form label {
+	display: block;
+	margin-bottom: 7px;
+	color: var(--color-accent);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.linkpva-contact-widget .linkpva-contact-form .wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 7px;
+}
+
+.linkpva-contact-widget .linkpva-contact-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.linkpva-contact-widget .linkpva-contact-form select,
+.linkpva-contact-widget .linkpva-contact-form textarea {
+	width: 100%;
+	min-height: 48px;
+	padding: 10px 13px;
+	color: var(--color-accent);
+	background: #fff;
+	border: 1px solid var(--color-border);
+	border-radius: 9px;
+	outline: 0;
+	transition: all 0.3s ease;
+}
+
+.linkpva-contact-widget .linkpva-contact-form textarea {
+	min-height: 135px;
+	resize: vertical;
+}
+
+.linkpva-contact-widget .linkpva-contact-form input:focus,
+.linkpva-contact-widget .linkpva-contact-form select:focus,
+.linkpva-contact-widget .linkpva-contact-form textarea:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.linkpva-contact-widget .linkpva-contact-form button,
+.linkpva-contact-widget .linkpva-contact-form input[type="submit"] {
+	display: inline-flex;
+	min-height: 52px;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 22px;
+	color: #fff;
+	background: var(--color-primary);
+	border: 1px solid transparent;
+	border-radius: 11px;
+	box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.linkpva-contact-widget .linkpva-contact-form button:hover,
+.linkpva-contact-widget .linkpva-contact-form button:focus-visible,
+.linkpva-contact-widget .linkpva-contact-form input[type="submit"]:hover,
+.linkpva-contact-widget .linkpva-contact-form input[type="submit"]:focus-visible {
+	color: #fff;
+	background: var(--color-primary-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 16px 34px rgba(37, 99, 235, 0.3);
+}
+
+.linkpva-contact-widget .linkpva-contact-form .wpcf7-not-valid-tip {
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.linkpva-contact-widget .linkpva-contact-form .wpcf7-response-output {
+	margin: 18px 0 0;
+	padding: 11px 14px;
+	border-radius: 8px;
+	font-size: 12px;
+}
+
+.linkpva-contact-info-widget .linkpva-info-icon {
+	display: grid;
+	width: 48px;
+	height: 48px;
+	place-items: center;
+	margin-bottom: 18px;
+	color: var(--color-primary);
+	background: var(--color-primary-light);
+	border-radius: 11px;
+	font-size: 20px;
+}
+
+.linkpva-contact-info-widget .linkpva-info-icon i {
+	font-size: inherit;
+}
+
+.linkpva-contact-info-widget .linkpva-info-icon svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-contact-info-widget .linkpva-info-icon svg path,
+.linkpva-contact-info-widget .linkpva-read-more svg path {
+	fill: currentColor;
+}
+
+.linkpva-contact-info-widget .linkpva-read-more {
+	margin-top: 16px;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-faq-tabs-sidebar-title,
+.linkpva-faqs-with-tab-widget .linkpva-faq-tab-heading {
+	font-size: 20px;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-faq-tabs-sidebar-title,
+.linkpva-faqs-with-tab-widget .linkpva-faq-tab-heading {
+	margin-bottom: 16px;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-help-card > svg.linkpva-help-icon {
+	display: block;
+	width: 44px;
+	height: 44px;
+	padding: 12px;
+	flex: 0 0 auto;
+	color: var(--color-primary);
+	background: var(--color-primary-light);
+	border-radius: 10px;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-help-card > svg.linkpva-help-icon path,
+.linkpva-faqs-with-tab-widget .linkpva-faq-toggle-icon path {
+	fill: currentColor;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-accordion-item button > svg.linkpva-faq-toggle-icon {
+	display: block;
+	width: 27px;
+	height: 27px;
+	padding: 7px;
+	flex: 0 0 auto;
+	color: var(--color-primary);
+	background: var(--color-primary-light);
+	border-radius: 7px;
+	transition: transform 0.3s ease;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-accordion-item.is-open button > svg.linkpva-faq-toggle-icon {
+	transform: rotate(45deg);
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-category-pills a {
+	padding: 7px 11px;
+	color: var(--color-text);
+	background: #fff;
+	border: 1px solid var(--color-border);
+	border-radius: 20px;
+	font-size: 10px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-category-pills a.is-active,
+.linkpva-faqs-with-tab-widget .linkpva-category-pills a:hover,
+.linkpva-faqs-with-tab-widget .linkpva-category-pills a:focus-visible {
+	color: #fff;
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-faq-tab-panel {
+	scroll-margin-top: 110px;
+}
+
+.linkpva-faqs-with-tab-widget .linkpva-faq-tab-panel + .linkpva-faq-tab-panel {
+	margin-top: 48px;
+}
+
+.linkpva-policy-layout-widget .linkpva-policy-layout-no-nav {
+	grid-template-columns: minmax(0, 760px);
+}
+
+.linkpva-policy-layout-widget .linkpva-policy-content > h2,
+.linkpva-policy-layout-widget .linkpva-policy-anchor {
+	scroll-margin-top: 110px;
+}
+
+.linkpva-policy-layout-widget .linkpva-policy-anchor {
+	display: block;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-icon {
+	display: block;
+	margin-bottom: 24px;
+	color: #fff;
+	line-height: 1;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-icon i {
+	font-size: 48px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-icon svg {
+	width: 48px;
+	height: 48px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-icon svg path,
+.linkpva-bulk-order-widget .linkpva-bulk-order-list-icon svg path {
+	fill: currentColor;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-title {
+	margin-bottom: 12px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-list-icon {
+	display: block;
+	flex: 0 0 auto;
+	color: #86acff;
+	line-height: 1;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-list-icon svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form-title {
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form form > p {
+	margin-bottom: 20px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form form > p:last-child {
+	margin-bottom: 0;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form label {
+	display: block;
+	color: var(--color-accent);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form .wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 7px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+.linkpva-bulk-order-widget .linkpva-bulk-order-form select,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form textarea {
+	width: 100%;
+	min-height: 48px;
+	padding: 10px 13px;
+	color: var(--color-accent);
+	background: #fff;
+	border: 1px solid var(--color-border);
+	border-radius: 9px;
+	outline: 0;
+	transition: all 0.3s ease;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form textarea {
+	min-height: 135px;
+	resize: vertical;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input:focus,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form select:focus,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form textarea:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form .wpcf7-list-item label {
+	display: inline-flex;
+	align-items: flex-start;
+	gap: 9px;
+	color: var(--color-text-muted);
+	font-weight: 400;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input[type="checkbox"],
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input[type="radio"] {
+	accent-color: var(--color-primary);
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form button,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input[type="submit"] {
+	display: inline-flex;
+	min-height: 52px;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 22px;
+	color: #fff;
+	background: var(--color-primary);
+	border: 1px solid transparent;
+	border-radius: 11px;
+	box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form button:hover,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form button:focus-visible,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input[type="submit"]:hover,
+.linkpva-bulk-order-widget .linkpva-bulk-order-form input[type="submit"]:focus-visible {
+	color: #fff;
+	background: var(--color-primary-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 16px 34px rgba(37, 99, 235, 0.3);
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form .wpcf7-not-valid-tip {
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.linkpva-bulk-order-widget .linkpva-bulk-order-form .wpcf7-response-output {
+	margin: 18px 0 0;
+	padding: 11px 14px;
+	border-radius: 8px;
+	font-size: 12px;
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-description p:last-child {
+	margin-bottom: 0;
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-description + .linkpva-our-approach-button {
+	margin-top: 16px;
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-button svg {
+	width: 17px;
+	height: 17px;
+	transition: transform 0.3s ease;
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-button svg path,
+.linkpva-our-approach-widget .linkpva-our-approach-card > svg path {
+	fill: currentColor;
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-button:hover svg,
+.linkpva-our-approach-widget .linkpva-our-approach-button:focus-visible svg {
+	transform: translateX(3px);
+}
+
+.linkpva-our-approach-widget .linkpva-our-approach-card > svg {
+	display: grid;
+	width: var(--linkpva-approach-icon-box-size, 48px);
+	height: var(--linkpva-approach-icon-box-size, 48px);
+	place-items: center;
+	margin-bottom: 18px;
+	padding: calc((var(--linkpva-approach-icon-box-size, 48px) - var(--linkpva-approach-icon-size, 20px)) / 2);
+	color: var(--color-primary);
+	background: var(--color-primary-light);
+	border-radius: 11px;
+}
+
+.linkpva-values-widget .linkpva-values-icon svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-values-widget .linkpva-values-icon svg path {
+	fill: currentColor;
+}
+
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-icon svg,
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-feature-icon svg,
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-note-icon svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-feature-icon,
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-note-icon {
+	display: block;
+	flex: 0 0 auto;
+	line-height: 1;
+}
+
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-feature-icon {
+	margin-top: 5px;
+	color: var(--color-success);
+}
+
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-feature-icon svg path,
+.linkpva-pricing-cards-widget .linkpva-pricing-cards-note-icon svg path {
+	fill: currentColor;
+}
+
+.linkpva-product-category-widget .linkpva-category-card a svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-product-category-widget .linkpva-category-card a svg path {
+	fill: currentColor;
+}
+
+.linkpva-product-category-widget .linkpva-category-icon {
+	overflow: hidden;
+}
+
+.linkpva-product-category-widget .linkpva-category-icon img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.linkpva-product-category-widget .linkpva-category-card a {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* Comparison table: preserve the pricing.html presentation inside Elementor. */
+.linkpva-comparison-table-widget {
+	width: 100%;
+	padding: 110px 0;
+	background: var(--color-background);
+}
+
+.linkpva-comparison-table-widget .linkpva-section-heading {
+	max-width: 650px;
+}
+
+.linkpva-comparison-table-widget .linkpva-section-heading.text-center {
+	margin: 0 auto 52px;
+}
+
+.linkpva-comparison-table-widget .linkpva-section-tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-bottom: 16px;
+	color: var(--color-primary);
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 0.11em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.linkpva-comparison-table-widget .linkpva-section-heading h2 {
+	margin-top: 0;
+	font-family: var(--font-heading);
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 800;
+	letter-spacing: -0.035em;
+	line-height: 1.15;
+}
+
+.linkpva-comparison-table-widget .linkpva-section-heading p {
+	max-width: 610px;
+	margin: 0;
+	color: var(--color-text-muted);
+	font-family: var(--font-body);
+	font-size: 17px;
+	line-height: 1.7;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table-wrap {
+	overflow-x: auto;
+	overflow-y: hidden;
+	background: #fff;
+	border: 1px solid #d9e2ef;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-sm);
+	scrollbar-color: #b8c6da transparent;
+	scrollbar-width: thin;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table {
+	width: 100%;
+	min-width: 760px;
+	margin: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table th,
+.linkpva-comparison-table-widget .linkpva-pricing-table td {
+	padding: 20px 24px;
+	border: 0;
+	border-bottom: 1px solid var(--color-border);
+	text-align: left;
+	vertical-align: middle;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table thead th {
+	color: var(--color-text-muted);
+	background: #f9fbff;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table tbody tr:last-child th,
+.linkpva-comparison-table-widget .linkpva-pricing-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table tbody th {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	color: var(--color-accent);
+	font-family: var(--font-heading);
+}
+
+@media (min-width: 768px) {
+	.linkpva-comparison-table-widget .linkpva-pricing-table.is-detailed tbody th {
+		display: table-cell;
+	}
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table small {
+	display: block;
+	color: var(--color-text-muted);
+	font-family: var(--font-body);
+	font-size: 11px;
+	font-weight: 500;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table td > strong {
+	display: block;
+	color: var(--color-accent);
+	font-family: var(--font-heading);
+	font-size: 22px;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table td:last-child {
+	text-align: right;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table td:last-child a {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	color: var(--color-primary);
+	font-size: 12px;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table td:last-child a svg {
+	width: 1em;
+	height: 1em;
+}
+
+.linkpva-comparison-table-widget .linkpva-pricing-table td:last-child a svg path {
+	fill: currentColor;
+}
+
+@media (max-width: 767.98px) {
+	.linkpva-comparison-table-widget {
+		padding: 70px 0;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-section-heading.text-center {
+		margin-bottom: 38px;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-section-heading h2 {
+		font-size: 32px;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-section-heading p {
+		font-size: 15px;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table-wrap {
+		overflow: visible;
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table {
+		display: block;
+		min-width: 0;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table thead {
+		display: none;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody {
+		display: grid;
+		gap: 14px;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody tr {
+		display: grid;
+		overflow: hidden;
+		background: #fff;
+		border: 1px solid #d9e2ef;
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody th,
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		gap: 14px;
+		padding: 13px 16px;
+		border-bottom: 1px solid var(--color-border);
+		text-align: right;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody th {
+		justify-content: flex-start;
+		padding: 16px;
+		text-align: left;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td::before {
+		flex: 1 1 auto;
+		color: var(--color-text-muted);
+		font-size: 10px;
+		font-weight: 800;
+		letter-spacing: 0.06em;
+		text-align: left;
+		text-transform: uppercase;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td:last-child {
+		border-bottom: 0;
+		text-align: right;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td > strong {
+		margin-left: auto;
+		font-size: 19px;
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table.is-detailed tbody td:nth-of-type(1)::before {
+		content: "Category";
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table.is-detailed tbody td:nth-of-type(2)::before {
+		content: "Primary detail";
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table.is-detailed tbody td:nth-of-type(3)::before {
+		content: "Starting price";
+	}
+
+	.linkpva-comparison-table-widget .linkpva-pricing-table.is-detailed tbody td:nth-of-type(4)::before {
+		content: "Details";
+	}
 }

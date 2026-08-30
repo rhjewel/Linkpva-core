@@ -63,11 +63,14 @@ if (!class_exists(__NAMESPACE__ . '\\Egns_Elementor')) {
 			}
 
 			$elementor_widgets = apply_filters('linkpva_widgets', array(
+				// home page 
 				'demo',
 				'header',
 				'footer',
 				'hero-banner',
 				'trust-strip',
+				'product-category',
+				'products',
 				'compare-pricing',
 				'why-choose',
 				'how-it-works',
@@ -77,6 +80,21 @@ if (!class_exists(__NAMESPACE__ . '\\Egns_Elementor')) {
 				'blog',
 				'bulk-quote',
 				'call-to-action',
+				// about page 
+				'our-approach',
+				'values',
+				// pricing page 
+				'pricing-cards',
+				'comparison-table',
+				// contact page 
+				'contact',
+				'contact-info',
+				// faqs page
+				'faqs-with-tab',
+				// policy page
+				'policy-layout',
+				// bulk-order page
+				'bulk-order',
 			));
 
 			if (!is_array($elementor_widgets)) {

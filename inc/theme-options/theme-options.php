@@ -91,10 +91,10 @@ add_action('csf_loaded', function () {
             'folder-name' => EGNS_CORE_INC . '/theme-options/career/'
         ),
 
-        // people 
+        // product 
         array(
-            'file-name'   => 'people',
-            'folder-name' => EGNS_CORE_INC . '/theme-options/people/'
+            'file-name'   => 'product',
+            'folder-name' => EGNS_CORE_INC . '/theme-options/product/'
         ),
         // Case Study 
         array(

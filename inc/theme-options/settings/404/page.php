@@ -16,40 +16,21 @@ CSF::createSection($prefix, array(
 			'id'      => '404_title',
 			'title'   => esc_html__('Title', 'linkpva-core'),
 			'type'    => 'text',
-			'default' => wp_kses_post('Something Went Missing'),
+			'default' => wp_kses_post('We Couldn’t Find That Page'),
 		),
 		array(
 			'id'      => '404_button_text',
 			'title'   => esc_html__('Button label', 'linkpva-core'),
 			'type'    => 'text',
-			'info'    => wp_kses_post('you can change <mark>button text</mark> of 404 page'),
+			'info'    => wp_kses_post('You can change <mark>button text</mark> of 404 page'),
 			'default' => esc_html__('Go to homepage', 'linkpva-core')
-		),
-		array(
-			'id'      => '404_bg_video',
-			'type'    => 'text',
-			'title'   => esc_html__('BG Video link', 'linkpva-core'),
-			'desc'    => esc_html__('Provide video link only.', 'linkpva-core'),
-			'default' => 'example.com/video/error.mp4'
-		),
-		array(
-			'id'      => '404_image',
-			'type'    => 'media',
-			'title'   => esc_html__('Error Image', 'linkpva-core'),
-			'library' => 'image',
-			'default' => array(
-				'url'       => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/error/error.png'),
-				'id'        => '404_image',
-				'thumbnail' => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/error/error.png'),
-				'alt'       => esc_attr('404 image'),
-				'title'     => esc_html('404 image'),
-			),
 		),
 		array(
 			'id'      => '404_content',
 			'title'   => esc_html__('Short Description', 'linkpva-core'),
 			'type'    => 'textarea',
-			'default' => esc_html__("Oops! The page you’re trying to reach can’t be found or may have been moved. Don’t worry — you can continue exploring.", 'linkpva-core')
+			'class' => 'egns_desc',
+			'default' => esc_html__("The page may have moved, the link may be incorrect, or the content may no longer be available.", 'linkpva-core')
 		),
 
 	)
