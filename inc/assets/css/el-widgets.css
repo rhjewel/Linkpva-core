@@ -172,11 +172,11 @@
 	font-size: 13px;
 }
 
-.linkpva-contact-widget .linkpva-contact-form form > p {
+.linkpva-contact-widget .linkpva-contact-form form>p {
 	margin-bottom: 20px;
 }
 
-.linkpva-contact-widget .linkpva-contact-form form > p:last-child {
+.linkpva-contact-widget .linkpva-contact-form form>p:last-child {
 	margin-bottom: 0;
 }
 
@@ -300,7 +300,7 @@
 	margin-bottom: 16px;
 }
 
-.linkpva-faqs-with-tab-widget .linkpva-help-card > svg.linkpva-help-icon {
+.linkpva-faqs-with-tab-widget .linkpva-help-card>svg.linkpva-help-icon {
 	display: block;
 	width: 44px;
 	height: 44px;
@@ -311,12 +311,12 @@
 	border-radius: 10px;
 }
 
-.linkpva-faqs-with-tab-widget .linkpva-help-card > svg.linkpva-help-icon path,
+.linkpva-faqs-with-tab-widget .linkpva-help-card>svg.linkpva-help-icon path,
 .linkpva-faqs-with-tab-widget .linkpva-faq-toggle-icon path {
 	fill: currentColor;
 }
 
-.linkpva-faqs-with-tab-widget .linkpva-accordion-item button > svg.linkpva-faq-toggle-icon {
+.linkpva-faqs-with-tab-widget .linkpva-accordion-item button>svg.linkpva-faq-toggle-icon {
 	display: block;
 	width: 27px;
 	height: 27px;
@@ -328,7 +328,7 @@
 	transition: transform 0.3s ease;
 }
 
-.linkpva-faqs-with-tab-widget .linkpva-accordion-item.is-open button > svg.linkpva-faq-toggle-icon {
+.linkpva-faqs-with-tab-widget .linkpva-accordion-item.is-open button>svg.linkpva-faq-toggle-icon {
 	transform: rotate(45deg);
 }
 
@@ -355,7 +355,7 @@
 	scroll-margin-top: 110px;
 }
 
-.linkpva-faqs-with-tab-widget .linkpva-faq-tab-panel + .linkpva-faq-tab-panel {
+.linkpva-faqs-with-tab-widget .linkpva-faq-tab-panel+.linkpva-faq-tab-panel {
 	margin-top: 48px;
 }
 
@@ -363,7 +363,7 @@
 	grid-template-columns: minmax(0, 760px);
 }
 
-.linkpva-policy-layout-widget .linkpva-policy-content > h2,
+.linkpva-policy-layout-widget .linkpva-policy-content>h2,
 .linkpva-policy-layout-widget .linkpva-policy-anchor {
 	scroll-margin-top: 110px;
 }
@@ -414,11 +414,11 @@
 	font-size: 24px;
 }
 
-.linkpva-bulk-order-widget .linkpva-bulk-order-form form > p {
+.linkpva-bulk-order-widget .linkpva-bulk-order-form form>p {
 	margin-bottom: 20px;
 }
 
-.linkpva-bulk-order-widget .linkpva-bulk-order-form form > p:last-child {
+.linkpva-bulk-order-widget .linkpva-bulk-order-form form>p:last-child {
 	margin-bottom: 0;
 }
 
@@ -518,7 +518,7 @@
 	margin-bottom: 0;
 }
 
-.linkpva-our-approach-widget .linkpva-our-approach-description + .linkpva-our-approach-button {
+.linkpva-our-approach-widget .linkpva-our-approach-description+.linkpva-our-approach-button {
 	margin-top: 16px;
 }
 
@@ -529,7 +529,7 @@
 }
 
 .linkpva-our-approach-widget .linkpva-our-approach-button svg path,
-.linkpva-our-approach-widget .linkpva-our-approach-card > svg path {
+.linkpva-our-approach-widget .linkpva-our-approach-card>svg path {
 	fill: currentColor;
 }
 
@@ -538,7 +538,7 @@
 	transform: translateX(3px);
 }
 
-.linkpva-our-approach-widget .linkpva-our-approach-card > svg {
+.linkpva-our-approach-widget .linkpva-our-approach-card>svg {
 	display: grid;
 	width: var(--linkpva-approach-icon-box-size, 48px);
 	height: var(--linkpva-approach-icon-box-size, 48px);
@@ -598,8 +598,6 @@
 
 .linkpva-product-category-widget .linkpva-category-icon img {
 	display: block;
-	width: 100%;
-	height: 100%;
 	object-fit: cover;
 }
 
@@ -719,7 +717,7 @@
 	font-weight: 500;
 }
 
-.linkpva-comparison-table-widget .linkpva-pricing-table td > strong {
+.linkpva-comparison-table-widget .linkpva-pricing-table td>strong {
 	display: block;
 	color: var(--color-accent);
 	font-family: var(--font-heading);
@@ -830,7 +828,7 @@
 		text-align: right;
 	}
 
-	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td > strong {
+	.linkpva-comparison-table-widget .linkpva-pricing-table tbody td>strong {
 		margin-left: auto;
 		font-size: 19px;
 	}
