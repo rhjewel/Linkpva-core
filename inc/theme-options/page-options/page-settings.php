@@ -19,7 +19,7 @@ CSF::createMetabox(
     $prefix,
     array(
         'title'           => esc_html__('Page Settings', 'linkpva-core'),
-        'post_type'       => ['page', 'case-study'],
+        'post_type'       => ['page', 'post', 'career', 'case-study'],
         'context'         => 'normal',
         'priority'        => 'high',
         'show_restore'    => true,

@@ -137,7 +137,7 @@ function egnsCustomStyling()
 
     if (!empty($breadcrumb_bg_url)) {
         $custom_css .= "
-        .breadcrumb-section {
+        .linkpva-page-hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" . esc_url($breadcrumb_bg_url) . "') !important;
         }
     ";
