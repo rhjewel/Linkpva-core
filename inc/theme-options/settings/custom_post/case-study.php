@@ -15,29 +15,20 @@ CSF::createSection($prefix, array(
       'content' => esc_html__('Case Study archive', 'linkpva-core'),
     ),
     array(
-      'id'      => 'top_filter_casestudy_archive',
-      'type'    => 'switcher',
-      'title'   => esc_html__('Top Filter With Title', 'linkpva-core'),
-      'label'   => 'Do you want activate it ?',
-      'default' => true
-    ),
-    array(
-      'id'         => 'top_filter_casestudy_archive_title',
-      'type'       => 'text',
-      'title'      => esc_html__('Top Filter Title', 'linkpva-core'),
-      'default'    => 'Aligning financial processes with growth strategy helps organizations scale efficiently while maintaining control and compliance.',
-      'dependency' => array('top_filter_casestudy_archive', '==', 'true'),
-
-    ),
-    array(
       'id'    => 'breadcrumb_cpt_case_heading',
       'type'  => 'text',
       'title' => esc_html__('Breadcrumb Heading', 'linkpva-core'),
     ),
     array(
+      'id'         => 'breadcrumb_cpt_case_short_desc',
+      'type'       => 'textarea',
+      'class'      => 'egns_desc',
+      'title'      => esc_html__('Breadcrumb Description', 'linkpva-core'),
+    ),
+    array(
       'id'      => 'case_study_posts_per_page',
       'type'    => 'number',
-      'title'   => esc_html__('People Archive Post Limit', 'linkpva-core'),
+      'title'   => esc_html__('Posts per page limit', 'linkpva-core'),
       'default' => 9,
     ),
 

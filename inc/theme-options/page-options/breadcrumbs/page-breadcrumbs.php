@@ -27,6 +27,13 @@ CSF::createSection(
 				'dependency' => array('breadcrumb_enable_page', '==', 'true'),
 			),
 			array(
+				'id'         => 'breadcrumb_page_short_desc',
+				'type'       => 'textarea',
+				'class'      => 'egns_desc',
+				'title'      => esc_html__('Short Description', 'linkpva-core'),
+				'dependency' => array('breadcrumb_enable_page', '==', 'true'),
+			),
+			array(
 				'id'         => 'breadcrumb_page_bg_color',
 				'type'       => 'color',
 				'title'      => esc_html__('Background Color', 'linkpva-core'),

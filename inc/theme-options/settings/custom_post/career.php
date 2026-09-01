@@ -15,14 +15,20 @@ CSF::createSection($prefix, array(
       'content' => esc_html__('Career archive', 'linkpva-core'),
     ),
     array(
-      'id'         => 'breadcrumb_cpt_creer_heading',
+      'id'         => 'breadcrumb_cpt_career_heading',
       'type'       => 'text',
       'title'      => esc_html__('Breadcrumb Heading', 'linkpva-core'),
     ),
     array(
+      'id'         => 'breadcrumb_cpt_career_short_desc',
+      'type'       => 'textarea',
+      'class'      => 'egns_desc',
+      'title'      => esc_html__('Breadcrumb Description', 'linkpva-core'),
+    ),
+    array(
       'id'      => 'career_posts_per_page',
       'type'    => 'number',
-      'title'   => esc_html__('Posts per page', 'linkpva-core'),
+      'title'   => esc_html__('Posts per page limit', 'linkpva-core'),
       'default' => 9,
     ),
 

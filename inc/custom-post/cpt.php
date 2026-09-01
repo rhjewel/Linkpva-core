@@ -80,43 +80,6 @@ if (!class_exists('Aventis_Custom_Post_Type')) {
 					)
 				],
 
-				// Custom Post People
-				[
-					'post_type' => 'people',
-					'args'      => array(
-						'label'       => esc_html__('Peoples', 'linkpva-core'),
-						'description' => esc_html__('Peoples', 'linkpva-core'),
-						'menu_icon'   => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/small-icon.svg'),
-						'labels'      => array(
-							'name'               => esc_html_x('Peoples', 'Post Type General Name', 'linkpva-core'),
-							'singular_name'      => esc_html_x('People', 'Post Type Singular Name', 'linkpva-core'),
-							'menu_name'          => esc_html__('Peoples', 'linkpva-core'),
-							'all_items'          => esc_html__('All Peoples', 'linkpva-core'),
-							'view_item'          => esc_html__('View People', 'linkpva-core'),
-							'add_new_item'       => esc_html__('Add People', 'linkpva-core'),
-							'add_new'            => esc_html__('Add People', 'linkpva-core'),
-							'edit_item'          => esc_html__('Edit People', 'linkpva-core'),
-							'update_item'        => esc_html__('Update People', 'linkpva-core'),
-							'search_items'       => esc_html__('Search People', 'linkpva-core'),
-							'not_found'          => esc_html__('Not Found', 'linkpva-core'),
-							'not_found_in_trash' => esc_html__('Not found in Trash', 'linkpva-core'),
-						),
-						'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'),
-						'hierarchical'        => true,
-						'public'              => true,
-						'has_archive'         => true,
-						"publicly_queryable"  => true,
-						'show_ui'             => true,
-						"rewrite"             => array('slug' => 'people', 'with_front' => true),
-						'exclude_from_search' => false,
-						'can_export'          => true,
-						'capability_type'     => 'post',
-						'query_var'           => true,
-						"show_in_rest"        => true,
-						'menu_position'       => 37,
-					)
-				],
-
 				// Custom Post Case Study
 				[
 					'post_type' => 'case-study',
@@ -334,61 +297,6 @@ if (!class_exists('Aventis_Custom_Post_Type')) {
 						'meta_box_cb'        => 'post_tags_meta_box',
 					)
 				),
-
-
-				//people category
-				array(
-					'taxonomy'    => 'people-category',
-					'object_type' => 'people',
-					'args'        => array(
-						"labels"  => array(
-							"name"          => esc_html__("Categories", 'linkpva-core'),
-							"singular_name" => esc_html__("Categories", 'linkpva-core'),
-							"menu_name"     => esc_html__("Categories", 'linkpva-core'),
-							"all_items"     => esc_html__("All Career Categories", 'linkpva-core'),
-							"add_new_item"  => esc_html__("Add New Category", 'linkpva-core')
-						),
-						"public"             => true,
-						"hierarchical"       => true,
-						'has_archive'        => true,
-						"show_ui"            => true,
-						"show_in_menu"       => true,
-						"show_in_nav_menus"  => true,
-						"rewrite"            => array('slug' => 'people-category', 'with_front' => true),
-						"query_var"          => true,
-						"show_admin_column"  => true,
-						"show_in_rest"       => true,
-						"show_in_quick_edit" => true,
-					)
-				),
-
-				// Tag for people post
-				array(
-					'taxonomy'    => 'people-tag',
-					'object_type' => 'people',
-					'args'        => array(
-						"labels"  => array(
-							"name"          => esc_html__("Tags", 'linkpva-core'),
-							"singular_name" => esc_html__("Tags", 'linkpva-core'),
-							"menu_name"     => esc_html__("Tags", 'linkpva-core'),
-							"all_items"     => esc_html__("All Tags", 'linkpva-core'),
-							"add_new_item"  => esc_html__("Add New Tags", 'linkpva-core')
-						),
-						"public"             => true,
-						"hierarchical"       => false,
-						'has_archive'        => true,
-						"show_ui"            => true,
-						"show_in_menu"       => true,
-						"show_in_nav_menus"  => true,
-						"rewrite"            => array('slug' => 'people-tag', 'with_front' => true),
-						"query_var"          => true,
-						"show_admin_column"  => true,
-						"show_in_rest"       => true,
-						"show_in_quick_edit" => true,
-						'meta_box_cb'        => 'post_tags_meta_box',
-					)
-				),
-
 
 				//case study category
 				array(

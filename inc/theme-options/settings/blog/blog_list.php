@@ -20,6 +20,22 @@ CSF::createSection($prefix, array(
 			'default' => 'standard',
 			'desc'    => wp_kses(__('You can set <mark>blog layout</mark> for blog archive page', 'linkpva-core'), wp_kses_allowed_html('post')),
 		),
+		// A Subheading
+		array(
+			'type'    => 'subheading',
+			'content' => esc_html__('Post archive', 'linkpva-core'),
+		),
+		array(
+			'id'         => 'breadcrumb_post_heading',
+			'type'       => 'text',
+			'title'      => esc_html__('Breadcrumb Heading', 'linkpva-core'),
+		),
+		array(
+			'id'         => 'breadcrumb_post_short_desc',
+			'type'       => 'textarea',
+			'class'      => 'egns_desc',
+			'title'      => esc_html__('Breadcrumb Description', 'linkpva-core'),
+		),
 	),
 
 ));
