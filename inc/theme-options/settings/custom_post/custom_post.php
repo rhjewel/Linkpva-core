@@ -10,4 +10,5 @@ CSF::createSection($prefix, array(
 ));
 
 require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/career.php';
+require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/product.php';
 require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/case-study.php';
