@@ -1241,7 +1241,7 @@ class linkpva_Header_Widget extends Widget_Base
 				<?php if ($show_search) : ?>
 					<form class="linkpva-search-form" id="<?php echo esc_attr($search_form_id); ?>" action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search" hidden data-search-form>
 						<label class="visually-hidden" for="<?php echo esc_attr($search_input_id); ?>"><?php echo esc_html($settings['linkpva_header_search_input_label']); ?></label>
-						<?php $this->render_icon($settings['linkpva_header_search_icon'], array('aria-hidden' => 'true')); ?>
+						<?php //$this->render_icon($settings['linkpva_header_search_icon'], array('aria-hidden' => 'true')); ?>
 						<input id="<?php echo esc_attr($search_input_id); ?>" name="s" type="search" placeholder="<?php echo esc_attr($settings['linkpva_header_search_placeholder']); ?>">
 						<?php if ('yes' === $settings['linkpva_header_search_products_only']) : ?>
 							<input type="hidden" name="post_type" value="product">
