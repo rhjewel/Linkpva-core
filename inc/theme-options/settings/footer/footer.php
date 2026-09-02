@@ -17,5 +17,4 @@ if (class_exists('CSF')) {
 	------------------------------------*/
 
     require_once EGNS_CORE_INC . '/theme-options/settings/footer/footer_style.php';
-    // require_once EGNS_CORE_INC . '/theme-options/settings/footer/footer_options.php';
 }

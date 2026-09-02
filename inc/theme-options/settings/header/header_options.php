@@ -16,8 +16,6 @@ CSF::createSection($prefix, array(
             'class'   => 'egns_header_select',
             'options' => array(
                 'header_one'   => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/header/header-one.png'),
-                // 'header_two'   => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/header/header-two.png'),
-                // 'header_three' => esc_url(EGNS_CORE_THEME_OPTIONS_IMAGES . '/header/header-three.png'),
             ),
             'default' => 'header_one',
         ),
@@ -33,32 +31,9 @@ CSF::createSection($prefix, array(
             'chosen'      => true,
             'placeholder' => esc_html__('select a header', 'linkpva-core'),
             'options'     => \Egns_Core\Egns_Helper::get_custom_template_list('header-blocks'),
-            'default'     => 'header-one',
+            'default'     => 'header',
             'desc'        => wp_kses_post('You must select a <mark>Header</mark> for this layout. You can create a header here ( <a href="' . home_url() . '/wp-admin/edit.php?post_type=header-blocks">Header Template</a> )'),
-            // 'dependency'  => array('header_menu_style', '==', 'header_one')
         ),
-        // array(
-        //     'id'          => 'header_two_template',
-        //     'type'        => 'select',
-        //     'title'       => esc_html__('Select Header', 'linkpva-core'),
-        //     'chosen'      => true,
-        //     'placeholder' => esc_html__('select a header', 'linkpva-core'),
-        //     'options'     => \Egns_Core\Egns_Helper::get_custom_template_list('header-blocks'),
-        //     'default'     => 'header-two',
-        //     'desc'        => wp_kses_post('You must select a <mark>Header</mark> for this layout. You can create a header here ( <a href="' . home_url() . '/wp-admin/edit.php?post_type=header-blocks">Header Template</a> )'),
-        //     'dependency'  => array('header_menu_style', '==', 'header_two')
-        // ),
-        // array(
-        //     'id'          => 'header_three_template',
-        //     'type'        => 'select',
-        //     'title'       => esc_html__('Select Header', 'linkpva-core'),
-        //     'chosen'      => true,
-        //     'placeholder' => esc_html__('select a header', 'linkpva-core'),
-        //     'options'     => \Egns_Core\Egns_Helper::get_custom_template_list('header-blocks'),
-        //     'default'     => 'header-three',
-        //     'desc'        => wp_kses_post('You must select a <mark>Header</mark> for this layout. You can create a header here ( <a href="' . home_url() . '/wp-admin/edit.php?post_type=header-blocks">Header Template</a> )'),
-        //     'dependency'  => array('header_menu_style', '==', 'header_three')
-        // ),
 
     )
 ));

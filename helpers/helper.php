@@ -190,21 +190,6 @@ if (!class_exists('Egns_Helper')) {
 			return $options;
 		}
 
-		public static function  egns_project_value($key1, $key2 = '', $key3 = '', $default = '')
-		{
-
-			$page_options = get_post_meta(get_the_ID(), 'EGNS_PROJECT_META_ID', true);
-
-			if (isset($page_options[$key1][$key2][$key3])) {
-				return $page_options[$key1][$key2][$key3];
-			} elseif (isset($page_options[$key1][$key2])) {
-				return $page_options[$key1][$key2];
-			} elseif (isset($page_options[$key1])) {
-				return $page_options[$key1];
-			} else {
-				return $default;
-			}
-		}
 
 		public static function get_post_list_by_post_type($post_type)
 		{
@@ -293,42 +278,6 @@ if (!class_exists('Egns_Helper')) {
 		public static function get_blog_post_options()
 		{
 			$posts   = get_posts(['post_type' => 'post', 'posts_per_page' => -1]);
-			$options = [];
-
-			foreach ($posts as $post) {
-				$options[$post->ID] = get_the_title($post->ID);
-			}
-
-			return $options;
-		}
-
-
-		/**
-		 * filtering posts by title
-		 *
-		 * @return void
-		 */
-		public static function get_project_post_options()
-		{
-			$posts   = get_posts(['post_type' => 'project', 'posts_per_page' => -1]);
-			$options = [];
-
-			foreach ($posts as $post) {
-				$options[$post->ID] = get_the_title($post->ID);
-			}
-
-			return $options;
-		}
-
-
-		/**
-		 * filtering posts by title
-		 *
-		 * @return void
-		 */
-		public static function get_materials_post_options()
-		{
-			$posts   = get_posts(['post_type' => 'materials', 'posts_per_page' => -1]);
 			$options = [];
 
 			foreach ($posts as $post) {
@@ -469,6 +418,7 @@ if (!class_exists('Egns_Helper')) {
 			endif;
 		}
 
+
 		/**
 		 * Return term link value.
 		 *
@@ -482,6 +432,7 @@ if (!class_exists('Egns_Helper')) {
 			$link = get_term_link($term[0]->slug, $taxonomy);
 			return $link;
 		}
+
 
 		/**
 		 * filtering product by title
@@ -499,6 +450,8 @@ if (!class_exists('Egns_Helper')) {
 
 			return $options;
 		}
+
+
 		/**
 		 * clean special chars, spaces with hyphens
 		 *
@@ -511,6 +464,7 @@ if (!class_exists('Egns_Helper')) {
 
 			return preg_replace('/-+/', '', $string);  // Replaces multiple hyphens with single one.
 		}
+
 
 		/**
 		 * Return Elementor header footer plugin post list
@@ -532,6 +486,7 @@ if (!class_exists('Egns_Helper')) {
 			}
 			return $array;
 		}
+
 
 		/**
 		 * Return Elementor header post ID or default area
@@ -558,6 +513,7 @@ if (!class_exists('Egns_Helper')) {
 				return self::default_header_area();
 			}
 		}
+
 
 		/**
 		 * Generate the HTML for the default footer area
@@ -704,7 +660,7 @@ if (!class_exists('Egns_Helper')) {
 			ob_start();  // Start output buffering
 		?>
 
-			<footer class="footer-section pt-16">
+			<footer class="footer-section">
 				<div class="copyright-area">
 					<div class="container-fluid one">
 						<span>©<?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html__('Linkpva ', 'linkpva-core'); ?> <a href="<?php echo esc_url('https://www.egenslab.com/') ?>"><?php echo esc_html__('Egenslab', 'linkpva-core') ?></a>. <?php echo esc_html__('All Rights Reserved.', 'linkpva-core'); ?></span>
