@@ -2,6 +2,17 @@
 	content: url('../../theme-options/images/small-icon.svg');
 }
 
+.linkpva-hero-visual .linkpva-hero-image {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	object-fit: contain;
+}
+
 /* Products Elementor widget: Elementor icons may render as SVG instead of the theme's <i> icons. */
 .linkpva-products-widget .linkpva-text-link svg,
 .linkpva-products-widget .linkpva-product-body ul li svg,

@@ -301,7 +301,7 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 		$this->start_controls_section(
 			'linkpva_hero_banner_visual_content',
 			array(
-				'label' => esc_html__('Market Window', 'linkpva-core'),
+				'label' => esc_html__('Right Visual', 'linkpva-core'),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -309,14 +309,45 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 		$this->add_control(
 			'linkpva_hero_banner_show_visual',
 			array(
-				'label'        => esc_html__('Show Market Window', 'linkpva-core'),
+				'label'        => esc_html__('Show Right Visual', 'linkpva-core'),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
 		);
 
-		$visual_condition = array('linkpva_hero_banner_show_visual' => 'yes');
+		$this->add_control(
+			'linkpva_hero_banner_visual_type',
+			array(
+				'label'     => esc_html__('Visual Type', 'linkpva-core'),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'content',
+				'options'   => array(
+					'content' => esc_html__('Content', 'linkpva-core'),
+					'image'   => esc_html__('Image', 'linkpva-core'),
+				),
+				'condition' => array('linkpva_hero_banner_show_visual' => 'yes'),
+			)
+		);
+
+		$this->add_control(
+			'linkpva_hero_banner_visual_image',
+			array(
+				'label'       => esc_html__('Upload Image', 'linkpva-core'),
+				'type'        => Controls_Manager::MEDIA,
+				'media_types' => array('image', 'svg'),
+				'description' => esc_html__('The content visual is used when no image is selected.', 'linkpva-core'),
+				'condition'   => array(
+					'linkpva_hero_banner_show_visual' => 'yes',
+					'linkpva_hero_banner_visual_type' => 'image',
+				),
+			)
+		);
+
+		$visual_condition = array(
+			'linkpva_hero_banner_show_visual' => 'yes',
+			'linkpva_hero_banner_visual_type' => 'content',
+		);
 
 		$this->add_control('linkpva_hero_banner_browser_text', array('label' => esc_html__('Browser Text', 'linkpva-core'), 'type' => Controls_Manager::TEXT, 'default' => esc_html__('linkpva.com/shop', 'linkpva-core'), 'label_block' => true, 'condition' => $visual_condition));
 		$this->add_control('linkpva_hero_banner_window_label', array('label' => esc_html__('Window Label', 'linkpva-core'), 'type' => Controls_Manager::TEXT, 'default' => esc_html__('Available listings', 'linkpva-core'), 'label_block' => true, 'condition' => $visual_condition));
@@ -326,8 +357,8 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 			'linkpva_hero_banner_show_filter',
 			array('label' => esc_html__('Show Filter Badge', 'linkpva-core'), 'type' => Controls_Manager::SWITCHER, 'return_value' => 'yes', 'default' => 'yes', 'separator' => 'before', 'condition' => $visual_condition)
 		);
-		$this->add_control('linkpva_hero_banner_filter_icon', array('label' => esc_html__('Filter Icon', 'linkpva-core'), 'type' => Controls_Manager::ICONS, 'default' => array('value' => 'bi bi-sliders', 'library' => 'bootstrap'), 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_show_filter' => 'yes')));
-		$this->add_control('linkpva_hero_banner_filter_text', array('label' => esc_html__('Filter Text', 'linkpva-core'), 'type' => Controls_Manager::TEXT, 'default' => esc_html__('Filters', 'linkpva-core'), 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_show_filter' => 'yes')));
+		$this->add_control('linkpva_hero_banner_filter_icon', array('label' => esc_html__('Filter Icon', 'linkpva-core'), 'type' => Controls_Manager::ICONS, 'default' => array('value' => 'bi bi-sliders', 'library' => 'bootstrap'), 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_visual_type' => 'content', 'linkpva_hero_banner_show_filter' => 'yes')));
+		$this->add_control('linkpva_hero_banner_filter_text', array('label' => esc_html__('Filter Text', 'linkpva-core'), 'type' => Controls_Manager::TEXT, 'default' => esc_html__('Filters', 'linkpva-core'), 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_visual_type' => 'content', 'linkpva_hero_banner_show_filter' => 'yes')));
 
 		$repeater = new Repeater();
 		$repeater->add_control('icon', array('label' => esc_html__('Icon', 'linkpva-core'), 'type' => Controls_Manager::ICONS));
@@ -370,7 +401,10 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 			array(
 				'label'     => esc_html__('Floating Cards', 'linkpva-core'),
 				'tab'       => Controls_Manager::TAB_CONTENT,
-				'condition' => array('linkpva_hero_banner_show_visual' => 'yes'),
+				'condition' => array(
+					'linkpva_hero_banner_show_visual' => 'yes',
+					'linkpva_hero_banner_visual_type' => 'content',
+				),
 			)
 		);
 
@@ -550,7 +584,7 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 
 	private function register_window_style_controls()
 	{
-		$this->start_controls_section('linkpva_hero_banner_style_window', array('label' => esc_html__('Market Window', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes')));
+		$this->start_controls_section('linkpva_hero_banner_style_window', array('label' => esc_html__('Market Window', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_visual_type' => 'content')));
 
 		$this->add_group_control(Group_Control_Background::get_type(), array('name' => 'linkpva_hero_banner_style_window_background', 'selector' => '{{WRAPPER}} .linkpva-market-window'));
 		$this->add_group_control(Group_Control_Border::get_type(), array('name' => 'linkpva_hero_banner_style_window_border', 'selector' => '{{WRAPPER}} .linkpva-market-window'));
@@ -574,7 +608,7 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 
 	private function register_listing_style_controls()
 	{
-		$this->start_controls_section('linkpva_hero_banner_style_listing', array('label' => esc_html__('Listing Cards', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes')));
+		$this->start_controls_section('linkpva_hero_banner_style_listing', array('label' => esc_html__('Listing Cards', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_visual_type' => 'content')));
 
 		$this->add_control('linkpva_hero_banner_style_listing_background', array('label' => esc_html__('Background', 'linkpva-core'), 'type' => Controls_Manager::COLOR, 'selectors' => array('{{WRAPPER}} .linkpva-mini-card' => 'background-color: {{VALUE}};')));
 		$this->add_group_control(Group_Control_Border::get_type(), array('name' => 'linkpva_hero_banner_style_listing_border', 'selector' => '{{WRAPPER}} .linkpva-mini-card'));
@@ -602,7 +636,7 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 
 	private function register_floating_card_style_controls()
 	{
-		$this->start_controls_section('linkpva_hero_banner_style_floating', array('label' => esc_html__('Floating Cards', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_show_floating_cards' => 'yes')));
+		$this->start_controls_section('linkpva_hero_banner_style_floating', array('label' => esc_html__('Floating Cards', 'linkpva-core'), 'tab' => Controls_Manager::TAB_STYLE, 'condition' => array('linkpva_hero_banner_show_visual' => 'yes', 'linkpva_hero_banner_visual_type' => 'content', 'linkpva_hero_banner_show_floating_cards' => 'yes')));
 
 		$this->add_control('linkpva_hero_banner_style_floating_background', array('label' => esc_html__('Background', 'linkpva-core'), 'type' => Controls_Manager::COLOR, 'selectors' => array('{{WRAPPER}} .linkpva-floating-card' => 'background-color: {{VALUE}};')));
 		$this->add_group_control(Group_Control_Border::get_type(), array('name' => 'linkpva_hero_banner_style_floating_border', 'selector' => '{{WRAPPER}} .linkpva-floating-card'));
@@ -655,6 +689,28 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 		}
 	}
 
+	private function render_visual_image($image)
+	{
+		if (!is_array($image) || empty($image['url'])) {
+			return;
+		}
+
+		$attributes = array(
+			'class'         => 'linkpva-hero-image',
+			'loading'       => 'eager',
+			'decoding'      => 'async',
+			'fetchpriority' => 'high',
+		);
+
+		if (!empty($image['id'])) {
+			echo wp_get_attachment_image(absint($image['id']), 'full', false, $attributes);
+			return;
+		}
+?>
+		<img class="linkpva-hero-image" src="<?php echo esc_url($image['url']); ?>" alt="" loading="eager" decoding="async" fetchpriority="high">
+	<?php
+	}
+
 	protected function render()
 	{
 		$settings              = $this->get_settings_for_display();
@@ -670,8 +726,11 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 		$show_secondary_button = 'yes' === $settings['linkpva_hero_banner_show_secondary_button'] && !empty($settings['linkpva_hero_banner_secondary_button_text']);
 		$show_points           = 'yes' === $settings['linkpva_hero_banner_show_points'] && !empty($points);
 		$show_visual           = 'yes' === $settings['linkpva_hero_banner_show_visual'];
-		$show_filter           = $show_visual && 'yes' === $settings['linkpva_hero_banner_show_filter'] && !empty($settings['linkpva_hero_banner_filter_text']);
-		$show_floating_cards   = $show_visual && 'yes' === $settings['linkpva_hero_banner_show_floating_cards'] && !empty($floating_cards);
+		$visual_type           = isset($settings['linkpva_hero_banner_visual_type']) && 'image' === $settings['linkpva_hero_banner_visual_type'] ? 'image' : 'content';
+		$visual_image          = isset($settings['linkpva_hero_banner_visual_image']) && is_array($settings['linkpva_hero_banner_visual_image']) ? $settings['linkpva_hero_banner_visual_image'] : array();
+		$show_visual_image     = $show_visual && 'image' === $visual_type && !empty($visual_image['url']);
+		$show_filter           = $show_visual && !$show_visual_image && 'yes' === $settings['linkpva_hero_banner_show_filter'] && !empty($settings['linkpva_hero_banner_filter_text']);
+		$show_floating_cards   = $show_visual && !$show_visual_image && 'yes' === $settings['linkpva_hero_banner_show_floating_cards'] && !empty($floating_cards);
 		$show_window_heading   = !empty($settings['linkpva_hero_banner_window_label']) || !empty($settings['linkpva_hero_banner_window_heading']) || $show_filter;
 		$has_title             = !empty($settings['linkpva_hero_banner_title_before']) || !empty($settings['linkpva_hero_banner_title_highlight']) || !empty($settings['linkpva_hero_banner_title_after']);
 
@@ -684,10 +743,8 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 			$this->add_link_attributes('linkpva_hero_banner_secondary_button_link', $settings['linkpva_hero_banner_secondary_button_link']);
 			$this->add_render_attribute('linkpva_hero_banner_secondary_button_link', 'class', array('linkpva-button', 'linkpva-button-secondary'));
 		}
-		?>
-		<section class="linkpva-hero" data-linkpva-hero-banner-widget="<?php echo esc_attr($widget_id); ?>"<?php if ($has_title) : ?> aria-labelledby="<?php echo esc_attr($heading_id); ?>"<?php endif; ?>>
-			<!-- for animation only  -->
-			<canvas id="canvas"></canvas>
+	?>
+		<section class="linkpva-hero" data-linkpva-hero-banner-widget="<?php echo esc_attr($widget_id); ?>" <?php if ($has_title) : ?> aria-labelledby="<?php echo esc_attr($heading_id); ?>" <?php endif; ?>>
 			<?php if ($show_shapes) : ?>
 				<div class="linkpva-hero-shape linkpva-hero-shape-one" aria-hidden="true"></div>
 				<div class="linkpva-hero-shape linkpva-hero-shape-two" aria-hidden="true"></div>
@@ -706,8 +763,8 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 							<?php if ($has_title) : ?>
 								<h1 id="<?php echo esc_attr($heading_id); ?>">
 									<?php if (!empty($settings['linkpva_hero_banner_title_before'])) : ?><?php echo esc_html($settings['linkpva_hero_banner_title_before']); ?> <?php endif; ?>
-									<?php if (!empty($settings['linkpva_hero_banner_title_highlight'])) : ?><span><?php echo esc_html($settings['linkpva_hero_banner_title_highlight']); ?></span><?php endif; ?>
-									<?php if (!empty($settings['linkpva_hero_banner_title_after'])) : ?> <?php echo esc_html($settings['linkpva_hero_banner_title_after']); ?><?php endif; ?>
+								<?php if (!empty($settings['linkpva_hero_banner_title_highlight'])) : ?><span><?php echo esc_html($settings['linkpva_hero_banner_title_highlight']); ?></span><?php endif; ?>
+								<?php if (!empty($settings['linkpva_hero_banner_title_after'])) : ?> <?php echo esc_html($settings['linkpva_hero_banner_title_after']); ?><?php endif; ?>
 								</h1>
 							<?php endif; ?>
 
@@ -743,62 +800,66 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 					<?php if ($show_visual) : ?>
 						<div class="col-lg-6">
 							<div class="linkpva-hero-visual">
-								<div class="linkpva-market-window">
-									<div class="linkpva-window-bar">
-										<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-										<?php if (!empty($settings['linkpva_hero_banner_browser_text'])) : ?><div><?php echo esc_html($settings['linkpva_hero_banner_browser_text']); ?></div><?php endif; ?>
-									</div>
-									<div class="linkpva-window-body">
-										<?php if ($show_window_heading) : ?>
-											<div class="linkpva-window-heading">
-												<div>
-													<?php if (!empty($settings['linkpva_hero_banner_window_label'])) : ?><small><?php echo esc_html($settings['linkpva_hero_banner_window_label']); ?></small><?php endif; ?>
-													<?php if (!empty($settings['linkpva_hero_banner_window_heading'])) : ?><strong><?php echo esc_html($settings['linkpva_hero_banner_window_heading']); ?></strong><?php endif; ?>
+								<?php if ($show_visual_image) : ?>
+									<?php $this->render_visual_image($visual_image); ?>
+								<?php else : ?>
+									<div class="linkpva-market-window">
+										<div class="linkpva-window-bar">
+											<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+											<?php if (!empty($settings['linkpva_hero_banner_browser_text'])) : ?><div><?php echo esc_html($settings['linkpva_hero_banner_browser_text']); ?></div><?php endif; ?>
+										</div>
+										<div class="linkpva-window-body">
+											<?php if ($show_window_heading) : ?>
+												<div class="linkpva-window-heading">
+													<div>
+														<?php if (!empty($settings['linkpva_hero_banner_window_label'])) : ?><small><?php echo esc_html($settings['linkpva_hero_banner_window_label']); ?></small><?php endif; ?>
+														<?php if (!empty($settings['linkpva_hero_banner_window_heading'])) : ?><strong><?php echo esc_html($settings['linkpva_hero_banner_window_heading']); ?></strong><?php endif; ?>
+													</div>
+													<?php if ($show_filter) : ?>
+														<span><?php $this->render_icon($settings['linkpva_hero_banner_filter_icon'], array('aria-hidden' => 'true')); ?> <?php echo esc_html($settings['linkpva_hero_banner_filter_text']); ?></span>
+													<?php endif; ?>
 												</div>
-												<?php if ($show_filter) : ?>
-													<span><?php $this->render_icon($settings['linkpva_hero_banner_filter_icon'], array('aria-hidden' => 'true')); ?> <?php echo esc_html($settings['linkpva_hero_banner_filter_text']); ?></span>
-												<?php endif; ?>
-											</div>
-										<?php endif; ?>
+											<?php endif; ?>
 
-										<?php foreach ($listings as $item) : ?>
+											<?php foreach ($listings as $item) : ?>
+												<?php
+												if (empty($item['title']) && empty($item['description'])) {
+													continue;
+												}
+
+												$accent       = in_array($item['accent'] ?? 'default', array('default', 'purple', 'green'), true) ? $item['accent'] : 'default';
+												$accent_class = 'default' === $accent ? '' : ' is-' . $accent;
+												?>
+												<div class="linkpva-mini-card">
+													<div class="linkpva-mini-icon<?php echo esc_attr($accent_class); ?>"><?php $this->render_icon($item['icon'] ?? array(), array('aria-hidden' => 'true')); ?></div>
+													<div>
+														<?php if (!empty($item['title'])) : ?><span><?php echo esc_html($item['title']); ?></span><?php endif; ?>
+														<?php if (!empty($item['description'])) : ?><small><?php echo esc_html($item['description']); ?></small><?php endif; ?>
+													</div>
+													<?php if (!empty($item['action_text'])) : ?><strong><?php echo esc_html($item['action_text']); ?></strong><?php endif; ?>
+												</div>
+											<?php endforeach; ?>
+										</div>
+									</div>
+
+									<?php if ($show_floating_cards) : ?>
+										<?php foreach ($floating_cards as $item) : ?>
 											<?php
 											if (empty($item['title']) && empty($item['description'])) {
 												continue;
 											}
 
-											$accent       = in_array($item['accent'] ?? 'default', array('default', 'purple', 'green'), true) ? $item['accent'] : 'default';
-											$accent_class = 'default' === $accent ? '' : ' is-' . $accent;
+											$position = in_array($item['position'] ?? 'top', array('top', 'bottom'), true) ? $item['position'] : 'top';
 											?>
-											<div class="linkpva-mini-card">
-												<div class="linkpva-mini-icon<?php echo esc_attr($accent_class); ?>"><?php $this->render_icon($item['icon'] ?? array(), array('aria-hidden' => 'true')); ?></div>
-												<div>
-													<?php if (!empty($item['title'])) : ?><span><?php echo esc_html($item['title']); ?></span><?php endif; ?>
+											<div class="linkpva-floating-card linkpva-floating-card-<?php echo esc_attr($position); ?>">
+												<?php $this->render_icon($item['icon'] ?? array(), array('aria-hidden' => 'true')); ?>
+												<span>
+													<?php if (!empty($item['title'])) : ?><strong><?php echo esc_html($item['title']); ?></strong><?php endif; ?>
 													<?php if (!empty($item['description'])) : ?><small><?php echo esc_html($item['description']); ?></small><?php endif; ?>
-												</div>
-												<?php if (!empty($item['action_text'])) : ?><strong><?php echo esc_html($item['action_text']); ?></strong><?php endif; ?>
+												</span>
 											</div>
 										<?php endforeach; ?>
-									</div>
-								</div>
-
-								<?php if ($show_floating_cards) : ?>
-									<?php foreach ($floating_cards as $item) : ?>
-										<?php
-										if (empty($item['title']) && empty($item['description'])) {
-											continue;
-										}
-
-										$position = in_array($item['position'] ?? 'top', array('top', 'bottom'), true) ? $item['position'] : 'top';
-										?>
-										<div class="linkpva-floating-card linkpva-floating-card-<?php echo esc_attr($position); ?>">
-											<?php $this->render_icon($item['icon'] ?? array(), array('aria-hidden' => 'true')); ?>
-											<span>
-												<?php if (!empty($item['title'])) : ?><strong><?php echo esc_html($item['title']); ?></strong><?php endif; ?>
-												<?php if (!empty($item['description'])) : ?><small><?php echo esc_html($item['description']); ?></small><?php endif; ?>
-											</span>
-										</div>
-									<?php endforeach; ?>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -806,7 +867,7 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 				</div>
 			</div>
 		</section>
-		<?php
+<?php
 	}
 }
 
