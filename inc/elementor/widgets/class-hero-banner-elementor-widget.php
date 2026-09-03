@@ -686,6 +686,8 @@ class linkpva_Hero_Banner_Widget extends Widget_Base
 		}
 		?>
 		<section class="linkpva-hero" data-linkpva-hero-banner-widget="<?php echo esc_attr($widget_id); ?>"<?php if ($has_title) : ?> aria-labelledby="<?php echo esc_attr($heading_id); ?>"<?php endif; ?>>
+			<!-- for animation only  -->
+			<canvas id="canvas"></canvas>
 			<?php if ($show_shapes) : ?>
 				<div class="linkpva-hero-shape linkpva-hero-shape-one" aria-hidden="true"></div>
 				<div class="linkpva-hero-shape linkpva-hero-shape-two" aria-hidden="true"></div>
