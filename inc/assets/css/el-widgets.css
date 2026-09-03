@@ -13,6 +13,30 @@
 	object-fit: contain;
 }
 
+.linkpva-hero-visual::before {
+	transform-origin: center;
+	animation: linkpva-hero-visual-shape 8s ease-in-out infinite;
+}
+
+@keyframes linkpva-hero-visual-shape {
+	0%,
+	100% {
+		border-radius: 46% 54% 56% 44% / 46% 39% 61% 54%;
+		transform: translate3d(0, 0, 0) rotate(-4deg) scale(1);
+	}
+
+	50% {
+		border-radius: 54% 46% 43% 57% / 55% 51% 49% 45%;
+		transform: translate3d(0, -12px, 0) rotate(2deg) scale(1.035);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.linkpva-hero-visual::before {
+		animation: none;
+	}
+}
+
 /* Products Elementor widget: Elementor icons may render as SVG instead of the theme's <i> icons. */
 .linkpva-products-widget .linkpva-text-link svg,
 .linkpva-products-widget .linkpva-product-body ul li svg,
